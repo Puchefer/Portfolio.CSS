@@ -332,20 +332,82 @@ function initOwl() {
     var hit = document.getElementById('hero-hit');
     var fig = document.getElementById('hero-figure');
     if (!hit || !fig) return;
-    var capas = fig.querySelectorAll('.hero__me, .hero__owl');
+    var me = fig.querySelector('.hero__me');
+    var owl = fig.querySelector('.hero__owl');
 
-    // Lente que sigue al ratón: cada capa recibe la posición del cursor en sus propias coordenadas
+    // ----- Mancha viscosa que sigue al ratón -----
+    var activo = false;
+    var mx = 0, my = 0;          // ratón (coordenadas dentro de la figura)
+    var cx = 0, cy = 0;          // centro de la mancha (va con retraso: efecto "espeso")
+    var vx = 0, vy = 0;          // velocidad suavizada (para estirarla)
+    var R = 0;                   // tamaño actual
+    var RMAX = 120;              // tamaño cuando está activa
+    var N = 14;                  // puntos del contorno
+    var t = 0;
+
+    function contorno() {
+        var vel = Math.hypot(vx, vy);
+        var s = 1 + Math.min(vel / 35, 0.7);               // cuánto se estira
+        var dx = vel ? vx / vel : 1, dy = vel ? vy / vel : 0;
+        var pts = [];
+        for (var i = 0; i < N; i++) {
+            var a = i / N * Math.PI * 2;
+            // radio ondulante (nunca es un círculo perfecto)
+            var r = R * (1 + 0.13 * Math.sin(3 * a + t * 1.7) + 0.08 * Math.sin(5 * a - t * 2.3) + 0.05 * Math.sin(2 * a + t * 0.9));
+            var px = Math.cos(a) * r, py = Math.sin(a) * r;
+            // estira en la dirección del movimiento y estrecha de lado
+            var along = px * dx + py * dy, side = -px * dy + py * dx;
+            along *= along < 0 ? s : 1 + (s - 1) * 0.35;    // la cola se alarga más que la punta
+            side /= Math.sqrt(s);
+            pts.push([cx + along * dx - side * dy, cy + along * dy + side * dx]);
+        }
+        return pts;
+    }
+    // curva suave que pasa por todos los puntos (Catmull-Rom -> Bézier)
+    function trazo(pts, ox, oy) {
+        var d = '', n = pts.length;
+        for (var i = 0; i < n; i++) {
+            var p0 = pts[(i - 1 + n) % n], p1 = pts[i], p2 = pts[(i + 1) % n], p3 = pts[(i + 2) % n];
+            if (i === 0) d += 'M' + (p1[0] - ox).toFixed(1) + ' ' + (p1[1] - oy).toFixed(1);
+            var c1x = p1[0] + (p2[0] - p0[0]) / 6, c1y = p1[1] + (p2[1] - p0[1]) / 6;
+            var c2x = p2[0] - (p3[0] - p1[0]) / 6, c2y = p2[1] - (p3[1] - p1[1]) / 6;
+            d += 'C' + (c1x - ox).toFixed(1) + ' ' + (c1y - oy).toFixed(1) + ' ' + (c2x - ox).toFixed(1) + ' ' + (c2y - oy).toFixed(1) + ' ' + (p2[0] - ox).toFixed(1) + ' ' + (p2[1] - oy).toFixed(1);
+        }
+        return d + 'Z';
+    }
+
+    function animar() {
+        t += 0.016;
+        var px = cx, py = cy;
+        cx += (mx - cx) * 0.14;  cy += (my - cy) * 0.14;
+        vx += ((cx - px) - vx) * 0.25;  vy += ((cy - py) - vy) * 0.25;
+        R += ((activo ? RMAX : 0) - R) * 0.12;
+
+        if (!fig.classList.contains('is-off')) {
+            if (R < 0.5) {
+                me.style.clipPath = 'circle(0 at 0 0)';
+                owl.style.clipPath = 'none';
+            } else {
+                var pts = contorno();
+                var fr = fig.getBoundingClientRect(), or = owl.getBoundingClientRect();
+                me.style.clipPath = "path('" + trazo(pts, 0, 0) + "')";
+                var ox = or.left - fr.left, oy = or.top - fr.top;
+                // hueco en el gato: rectángulo entero menos la mancha (regla evenodd)
+                owl.style.clipPath = "path(evenodd, 'M0 0H" + or.width.toFixed(1) + "V" + or.height.toFixed(1) + "H0Z" + trazo(pts, ox, oy) + "')";
+            }
+        }
+        requestAnimationFrame(animar);
+    }
+
     hit.addEventListener('mousemove', function (e) {
-        capas.forEach(function (capa) {
-            var r = capa.getBoundingClientRect();
-            capa.style.setProperty('--x', (e.clientX - r.left) + 'px');
-            capa.style.setProperty('--y', (e.clientY - r.top) + 'px');
-        });
-        fig.classList.add('is-lens');
+        var fr = fig.getBoundingClientRect();
+        mx = e.clientX - fr.left; my = e.clientY - fr.top;
+        if (!activo) { if (R < 1) { cx = mx; cy = my; } activo = true; }
     });
-    hit.addEventListener('mouseleave', function () { fig.classList.remove('is-lens'); });
+    hit.addEventListener('mouseleave', function () { activo = false; });
+    animar();
 
-    // Móvil y teclado: alterna entre el gato y tu cara
+    // Móvil y teclado: alterna entre el gato y tu foto
     function alternar() { fig.classList.toggle('is-off'); }
     hit.addEventListener('click', function () {
         if (window.matchMedia('(hover: none)').matches) alternar();
