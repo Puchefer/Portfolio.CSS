@@ -1,0 +1,339 @@
+[
+  {
+    "id": 6,
+    "titulo": "AUDI",
+    "subtitulo": "AI-Assisted Spot",
+    "cover": "Img/audi-poster.jpg",
+    "video": "Img/audi-spot-ia.mp4",
+    "tags": [
+      "AI Video",
+      "Art Direction",
+      "Editing"
+    ],
+    "proys": [
+      {
+        "titulo": "AUDI · SPOT CON IA",
+        "descripcion": "Spot publicitario conceptual para Audi creado con herramientas de vídeo con inteligencia artificial. Una patinadora sobre hielo y un coche que dibuja los cuatro aros en la nieve: elegancia, control y potencia en 27 segundos. Dirección de arte, prompts y montaje propios.",
+        "foto": "Img/audi-poster.jpg",
+        "imgs": [],
+        "video": "Img/audi-spot-ia.mp4"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "titulo": "ASF",
+    "subtitulo": "Marketing Campaign",
+    "tags": [
+      "Strategy",
+      "Copywriting",
+      "Design"
+    ],
+    "cover": "Img/asf poster tres.webp",
+    "proys": [
+      {
+        "foto": "Img/asf poster tres.webp",
+        "titulo": "ASF CAMPAIGN",
+        "id": 0,
+        "descripcion": "Campaña de marketing para el matadero de Madrid enfocada al efecto que causan las drogas.",
+        "imgs": [
+          {
+            "src": "Img/asf poster tres.webp",
+            "alt": "ASF Poster Tres"
+          },
+          {
+            "src": "Img/HIGH ASF CALOR.webp",
+            "alt": "High ASF Calor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "titulo": "GOLDBERG",
+    "subtitulo": "3D Chain Reaction",
+    "cover": "Img/goldberg-poster.jpg",
+    "video": "Img/goldberg.mp4",
+    "tags": [
+      "3D Animation",
+      "Scene Design",
+      "Lighting"
+    ],
+    "proys": [
+      {
+        "titulo": "MÁQUINA DE GOLDBERG · 3D",
+        "descripcion": "Animación 3D de una máquina de reacción en cadena tipo Rube Goldberg dentro de un laboratorio, con brazos robóticos e iluminación roja.",
+        "foto": "Img/goldberg-poster.jpg",
+        "imgs": [],
+        "video": "Img/goldberg.mp4"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "titulo": "BIMBO",
+    "subtitulo": "Brand Reimagined",
+    "tags": [
+      "Identity",
+      "Packaging",
+      "Advertising"
+    ],
+    "cover": "Img/bimbo-phone-mockup-xd.webp",
+    "proys": [
+      {
+        "foto": "Img/bimbo-phone-mockup-xd.webp",
+        "titulo": "BIMBO REBRAND",
+        "id": 0,
+        "descripcion": "Propuesta de diseño para el rebranding de la marca Bimbo. Un enfoque moderno que mantiene la esencia icónica de la marca.",
+        "imgs": [
+          {
+            "src": "Img/bimbo-phone-mockup-xd.webp",
+            "alt": "Bimbo phone mockup"
+          }
+        ]
+      },
+      {
+        "foto": "Img/bimbo-port-2.webp",
+        "titulo": "PACKAGING",
+        "id": 1,
+        "descripcion": "Diseño de packaging para nuevos productos Bimbo.",
+        "imgs": [
+          {
+            "src": "Img/bimbo-port-2.webp",
+            "alt": "Packaging Bimbo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "titulo": "MICEL",
+    "subtitulo": "Logo Redesign · Motion",
+    "cover": "Img/micel-poster.jpg",
+    "video": "Img/micel-logo.mp4",
+    "tags": [
+      "Branding",
+      "Logo",
+      "Motion"
+    ],
+    "proys": [
+      {
+        "titulo": "MICEL · REDISEÑO DE LOGO",
+        "descripcion": "Propuesta de rediseño de logotipo para MICEL con su animación de presentación: un cubo verde que gira, se convierte en la “M” y despliega el nombre completo. Identidad sólida, volumétrica y fácil de reconocer.",
+        "foto": "Img/micel-poster.jpg",
+        "imgs": [],
+        "video": "Img/micel-logo.mp4"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "titulo": "BRAZO",
+    "subtitulo": "3D Mechanical Render",
+    "cover": "Img/brazo-poster.jpg",
+    "video": "Img/brazo-robotico.mp4",
+    "tags": [
+      "3D Modeling",
+      "Animation",
+      "Lighting"
+    ],
+    "proys": [
+      {
+        "titulo": "BRAZO ROBÓTICO · 3D",
+        "descripcion": "Modelado y animación 3D de un brazo robótico: piezas mecánicas, materiales metálicos iridiscentes y una cámara cinematográfica que recorre cada articulación.",
+        "foto": "Img/brazo-poster.jpg",
+        "imgs": [],
+        "video": "Img/brazo-robotico.mp4"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "titulo": "PELOTA",
+    "subtitulo": "3D Character Animation",
+    "cover": "Img/pelota-poster.jpg",
+    "video": "Img/pelota-blender.mp4",
+    "tags": [
+      "Blender",
+      "Character",
+      "WIP"
+    ],
+    "proys": [
+      {
+        "titulo": "PELOTA · ANIMACIÓN 3D",
+        "descripcion": "Animación 3D en Blender (trabajo en curso). Un balón con piernas que sube las escaleras de un estadio y persigue una pelota: estudio de ciclo de andar, peso, anticipación y personalidad del personaje.",
+        "foto": "Img/pelota-poster.jpg",
+        "imgs": [],
+        "video": "Img/pelota-blender.mp4"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "titulo": "VHS",
+    "subtitulo": "Found Footage Short",
+    "cover": "Img/vhs-poster.jpg",
+    "video": "Img/vhs-found-footage.mp4",
+    "tags": [
+      "Video",
+      "Atmosphere",
+      "Post-production"
+    ],
+    "proys": [
+      {
+        "titulo": "VHS · FOUND FOOTAGE",
+        "descripcion": "Corto con estética de cámara VHS: grano, timecode, color degradado y una atmósfera oscura que juega con lo que no se ve.",
+        "foto": "Img/vhs-poster.jpg",
+        "imgs": [],
+        "video": "Img/vhs-found-footage.mp4"
+      }
+    ]
+  },
+  {
+    "id": 0,
+    "titulo": "3D MAX",
+    "subtitulo": "Art & Evolution",
+    "tags": [
+      "Character Design",
+      "Modeling",
+      "Texturing"
+    ],
+    "cover": "Img/poster-arcane-final.jpg",
+    "proys": [
+      {
+        "foto": "Img/poster-arcane-final.jpg",
+        "titulo": "ARCANE",
+        "id": 0,
+        "descripcion": "Imagen renderizada 3D del anuncio publicitario de Arcane en movil. Exploración de nuevas texturas y volúmenes para la identidad visual.",
+        "imgs": [
+          {
+            "src": "Img/poster-arcane-final.jpg",
+            "alt": "3D Arcane poster"
+          }
+        ]
+      },
+      {
+        "foto": "Img/final final render violin.webp",
+        "titulo": "RENDER TROFEO",
+        "id": 1,
+        "descripcion": "Render 3D de Trofeo Musical.",
+        "imgs": [
+          {
+            "src": "Img/final final render violin.webp",
+            "alt": "Final render violin"
+          }
+        ]
+      },
+      {
+        "foto": "Img/beastt-perume.webp",
+        "titulo": "BEAST",
+        "id": 2,
+        "descripcion": "Modelo de una colonia renderizada 3D llamada BEAST.",
+        "imgs": [
+          {
+            "src": "Img/beastt-perume.webp",
+            "alt": "Beast 3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "titulo": "VOLVER",
+    "subtitulo": "Experimental Motion",
+    "cover": "Img/volver-poster.jpg",
+    "video": "Img/motion-volver.mp4",
+    "tags": [
+      "Motion Graphics",
+      "Editing",
+      "Experimental"
+    ],
+    "proys": [
+      {
+        "titulo": "VOLVER · MOTION",
+        "descripcion": "Pieza experimental de motion graphics: tipografía, texturas glitch, formas geométricas y montaje rítmico.",
+        "foto": "Img/volver-poster.jpg",
+        "imgs": [],
+        "video": "Img/motion-volver.mp4"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "FIGMA",
+    "subtitulo": "Digital Experience",
+    "tags": [
+      "UI/UX Design",
+      "Prototyping",
+      "System"
+    ],
+    "cover": "Img/iPhone 16 Pro.webp",
+    "proys": [
+      {
+        "foto": "Img/iPhone 16 Pro.webp",
+        "titulo": "UI DESIGN",
+        "id": 0,
+        "descripcion": "Diseño de interfaz de usuario para aplicación móvil.",
+        "imgs": [
+          {
+            "src": "Img/iPhone 16 Pro.webp",
+            "alt": "Figma UI Design"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "titulo": "BLADE",
+    "subtitulo": "Cinematic Motion",
+    "tags": [
+      "VFX",
+      "Motion Graphics",
+      "Editing"
+    ],
+    "cover": "Img/camisa blade.webp",
+    "proys": [
+      {
+        "foto": "Img/camisa blade.webp",
+        "titulo": "BLADE MOTION",
+        "id": 0,
+        "descripcion": "Marca de ropa para proyecto Blade.",
+        "imgs": [
+          {
+            "src": "Img/camisa blade.webp",
+            "alt": "Camisa Blade"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "titulo": "HOTTY",
+    "subtitulo": "Visual Identity",
+    "tags": [
+      "Branding",
+      "Art Direction",
+      "Social Media"
+    ],
+    "cover": "Img/hot pot poster pelo corto chill final.webp",
+    "proys": [
+      {
+        "foto": "Img/hot pot poster pelo corto chill final.webp",
+        "titulo": "HOTTY BRAND",
+        "id": 0,
+        "descripcion": "Identidad visual completa para Hotty.",
+        "imgs": [
+          {
+            "src": "Img/hot pot poster pelo corto chill final.webp",
+            "alt": "Hotty Proyectos"
+          }
+        ]
+      }
+    ]
+  }
+]

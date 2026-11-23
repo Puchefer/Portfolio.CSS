@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUCHE! | Fernando Puche — Digital designer & 3D animator</title>
+    <meta name="description" content="Portfolio de Fernando Puche: identidad visual, publicidad, 3D y UI/UX.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Mrs+Saint+Delafield&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-page="index" class="is-loading">
+
+    <!-- ============ PANTALLA DE CARGA ============ -->
+    <div class="loader" id="loader">
+        <p class="loader__label">LOAD PUCHE!</p>
+        <p class="loader__count"><span id="loader-count">0</span>%</p>
+        <div class="loader__bar"><span id="loader-bar"></span></div>
+    </div>
+
+    <!-- ============ CURSOR ============ -->
+    <div class="cursor" id="cursor"><span class="cursor__label" id="cursor-label"></span></div>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+        <a href="index.html" class="header__avatar" aria-label="Inicio">
+            <video src="Img/mi-cara_1.mp4" autoplay muted loop playsinline></video>
+        </a>
+        <button class="header__menu" id="menu-btn" aria-expanded="false" aria-controls="menu">
+            <span class="header__menu-open">MENU</span>
+            <span class="header__menu-close">CLOSE</span>
+        </button>
+        <a href="#contacto" class="header__cta" data-cursor="HOLA">Let's talk</a>
+    </header>
+
+    <!-- ============ MENÚ PANTALLA COMPLETA ============ -->
+    <nav class="menu" id="menu" aria-hidden="true">
+        <ul class="menu__links">
+            <li><a href="#trabajo"><span>01</span>TRABAJO</a></li>
+            <li><a href="#quehago"><span>02</span>QUÉ HAGO</a></li>
+            <li><a href="#quiensoy"><span>03</span>QUIÉN SOY</a></li>
+            <li><a href="#contacto"><span>04</span>CONTACTO</a></li>
+        </ul>
+        <div class="menu__foot">
+            <a href="mailto:fernandopuchemolina@gmail.com">fernandopuchemolina@gmail.com</a>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/fernandopuche/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://instagram.com/fernandopuche" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.artstation.com/puchefer" target="_blank" rel="noopener">ArtStation</a>
+                <a href="https://www.therookies.co/u/FernandoPuche" target="_blank" rel="noopener">The Rookies</a>
+                <a href="https://github.com/Puchefer" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ============ HERO ============ -->
+        <section class="hero">
+            <div class="hero__top">
+                <p>Digital designer &amp; 3D animator</p>
+                <p>Málaga <span class="pink">→</span> Madrid</p>
+                <p class="hide-sm">Disponible para proyectos<span class="dot"></span></p>
+            </div>
+
+            <h1 class="hero__title" aria-label="PUCHE!">
+                <span class="hero__line">
+                    <span>P</span><span>U</span><span>C</span><span>H</span><span>E</span><span class="pink">!</span>
+                </span>
+            </h1>
+
+            <div class="hero__glow" aria-hidden="true"></div>
+            <img class="hero__photo" id="hero-photo" src="Img/fernando.webp" alt="Fernando Puche">
+
+            <!-- Firma (se "dibuja" sola al cargar) -->
+            <svg class="hero__sign" viewBox="0 0 600 220" aria-hidden="true">
+                <text x="20" y="160" textLength="540" lengthAdjust="spacingAndGlyphs">F. Puche</text>
+            </svg>
+
+            <!-- Tarjeta tipo "Next Race" -->
+            <a href="proyecto.html?id=6" class="hero__card" data-cursor="VER">
+                <video src="Img/audi-spot-ia.mp4" poster="Img/audi-poster.jpg" autoplay muted loop playsinline></video>
+                <div>
+                    <p class="hero__card-label"><span class="dot"></span>Último proyecto</p>
+                    <p class="hero__card-title">AUDI × IA</p>
+                    <p class="hero__card-sub">AI-Assisted Spot →</p>
+                </div>
+            </a>
+
+            <div class="hero__bottom">
+                <p class="hero__claim">
+                    <strong>Redefiniendo marcas</strong>, peleando cada píxel.<br>
+                    Diseño digital, animación 3D y vídeo con IA.
+                </p>
+                <a href="#trabajo" class="hero__scroll">
+                    <span>Scroll</span>
+                    <span class="hero__scroll-line"></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============ CINTA ============ -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <span>BRANDING</span><i>✦</i><span>ADVERTISING</span><i>✦</i><span>3D</span><i>✦</i><span>UI/UX</span><i>✦</i><span>3D ANIMATION</span><i>✦</i><span>AI VIDEO</span><i>✦</i>
+                <span>BRANDING</span><i>✦</i><span>ADVERTISING</span><i>✦</i><span>3D</span><i>✦</i><span>UI/UX</span><i>✦</i><span>3D ANIMATION</span><i>✦</i><span>AI VIDEO</span><i>✦</i>
+            </div>
+        </div>
+
+        <!-- ============ MANIFIESTO ============ -->
+        <section class="manifesto">
+            <div class="manifesto__copy">
+                <p class="eyebrow">(Manifiesto)</p>
+                <p class="manifesto__text" id="manifesto">
+                    Marcas con <b>carácter</b>. Personajes con <b>alma</b>.
+                </p>
+            </div>
+            <img class="manifesto__art" src="Img/boceto-personaje.webp" alt="" aria-hidden="true">
+        </section>
+
+        <!-- ============ SEGUNDA CINTA (inclinada al revés) ============ -->
+        <div class="marquee marquee--reverse" aria-hidden="true">
+            <div class="marquee__track">
+                <span>SHOWREEL</span><i>✦</i><span>CARTA DE PRESENTACIÓN</span><i>✦</i><span>DIGITAL DESIGN</span><i>✦</i><span>3D ANIMATION</span><i>✦</i><span>AI VIDEO</span><i>✦</i><span>2026</span><i>✦</i>
+                <span>SHOWREEL</span><i>✦</i><span>CARTA DE PRESENTACIÓN</span><i>✦</i><span>DIGITAL DESIGN</span><i>✦</i><span>3D ANIMATION</span><i>✦</i><span>AI VIDEO</span><i>✦</i><span>2026</span><i>✦</i>
+            </div>
+        </div>
+
+        <!-- ============ SHOWREEL ============ -->
+        <section class="reel" id="reel">
+            <!-- PUCHE! gigante de fondo -->
+            <p class="reel__bg" aria-hidden="true">PUCHE!</p>
+
+            <p class="reel__side reel__side--left">Hecho en Málaga, con mucho café.</p>
+            <p class="reel__side reel__side--right">Madrid → Everywhere</p>
+
+            <h2 class="reel__title big-title reveal">SHOW<br><span class="outline">REEL</span><br>2026</h2>
+
+            <div class="reel__frame reveal" id="reel-frame">
+                <video id="reel-video" src="Img/showreel.mp4" poster="Img/showreel-poster.jpg" muted loop playsinline preload="metadata"></video>
+            </div>
+
+            <div class="reel__latest reveal">
+                <p class="eyebrow">(Carta de presentación)</p>
+                <p class="reel__latest-text">Un poco de lo que hago.<br>Diseño, 3D e IA en 40 segundos.</p>
+                <button class="reel__sound" id="reel-sound" data-cursor="SONIDO">Activar sonido →</button>
+            </div>
+
+            <div class="reel__links reveal">
+                <p class="eyebrow">(Escanéame)</p>
+                <div class="reel__qrs">
+                    <a href="https://qr.codes/yihb40" target="_blank" rel="noopener" data-cursor="ABRIR"><img src="Img/qr-1.png" alt="Código QR 1"></a>
+                    <a href="https://qr.codes/BvrEJR" target="_blank" rel="noopener" data-cursor="ABRIR"><img src="Img/qr-2.png" alt="Código QR 2"></a>
+                </div>
+                <a href="#contacto" class="btn-pill reel__cta" data-cursor="HOLA">Trabaja conmigo</a>
+            </div>
+        </section>
+
+        <!-- ============ TIRA DE FOTOS Y FRASES (scroll horizontal) ============ -->
+        <section class="strip" id="strip">
+            <div class="strip__sticky">
+                <div class="strip__head">
+                    <span class="strip__marker">01 <i>✦</i></span>
+                    <p class="eyebrow">(Highlights)</p>
+                </div>
+                <div class="strip__track" id="strip-track">
+                    <figure class="strip__photo"><img src="Img/asf poster tres.webp" alt="ASF"><figcaption><b>ASF</b> Marketing Campaign</figcaption></figure>
+                    <blockquote class="strip__quote">“Redefiniendo marcas, <span class="pink">peleando cada píxel.</span>”</blockquote>
+                    <figure class="strip__photo strip__photo--tall"><img src="Img/bimbo-phone-mockup-xd.webp" alt="Bimbo"><figcaption><b>BIMBO</b> Brand Reimagined</figcaption></figure>
+                    <figure class="strip__photo"><img src="Img/final final render violin.webp" alt="Render 3D"><figcaption><b>3D MAX</b> Art &amp; Evolution</figcaption></figure>
+                    <blockquote class="strip__quote">“Frescura andaluza, <span class="pink">energía de Madrid.</span>”</blockquote>
+                    <figure class="strip__photo strip__photo--tall"><img src="Img/hot pot poster pelo corto chill final.webp" alt="Hotty"><figcaption><b>HOTTY</b> Visual Identity</figcaption></figure>
+                    <figure class="strip__photo"><img src="Img/camisa blade.webp" alt="Blade"><figcaption><b>BLADE</b> Cinematic Motion</figcaption></figure>
+                    <blockquote class="strip__quote">“Diseño limpio, <span class="pink">código sólido.</span>”</blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TRABAJO ============ -->
+        <section class="work" id="trabajo">
+            <div class="section-head">
+                <h2 class="big-title reveal">SELECTED<br><span class="outline">WORK</span></h2>
+                <p class="section-head__count reveal">(<span id="work-count">06</span>)</p>
+            </div>
+            <div class="work__list" id="projects-grid"></div>
+        </section>
+
+        <!-- ============ ON SCREEN / OFF SCREEN ============ -->
+        <section class="split">
+            <a href="#quehago" class="split__card reveal" data-cursor="VER">
+                <span class="split__num">01</span>
+                <h3>ON<br>SCREEN</h3>
+                <p>Lo que hago: marcas, campañas, animación 3D y vídeo con IA.</p>
+            </a>
+            <a href="#quiensoy" class="split__card split__card--pink reveal" data-cursor="VER">
+                <span class="split__num">02</span>
+                <h3>OFF<br>SCREEN</h3>
+                <p>Quién hay detrás: de Málaga a Madrid, entre U-tad y Xatelite.</p>
+            </a>
+        </section>
+
+        <!-- ============ HALL OF FAME (la imagen cambia al pasar el ratón) ============ -->
+        <section class="hof">
+            <div class="section-head">
+                <h2 class="big-title reveal">HALL OF<br><span class="outline">FAME</span></h2>
+                <p class="section-head__text reveal">Pasa el ratón (o toca) para ver la otra cara de cada proyecto.</p>
+            </div>
+            <div class="hof__grid">
+                <a href="proyecto.html?id=5" class="hof__item reveal" data-cursor="VER">
+                    <div class="hof__media"><img src="Img/asf poster tres.webp" alt="ASF póster"><img class="hof__alt" src="Img/HIGH ASF CALOR.webp" alt="ASF variante"></div>
+                    <p><span>ASF</span><span>Campaign</span></p>
+                </a>
+                <a href="proyecto.html?id=1" class="hof__item reveal" data-cursor="VER">
+                    <div class="hof__media"><img src="Img/bimbo-phone-mockup-xd.webp" alt="Bimbo mockup"><img class="hof__alt" src="Img/bimbo-port-2.webp" alt="Bimbo packaging"></div>
+                    <p><span>BIMBO</span><span>Rebrand</span></p>
+                </a>
+                <a href="proyecto.html?id=0" class="hof__item reveal" data-cursor="VER">
+                    <div class="hof__media"><img src="Img/final final render violin.webp" alt="Render trofeo"><img class="hof__alt" src="Img/beastt-perume.webp" alt="Beast"></div>
+                    <p><span>3D MAX</span><span>Render</span></p>
+                </a>
+                <a href="proyecto.html?id=4" class="hof__item reveal" data-cursor="VER">
+                    <div class="hof__media"><img src="Img/hot pot poster pelo corto chill final.webp" alt="Hotty"><img class="hof__alt" src="Img/camisa blade.webp" alt="Blade"></div>
+                    <p><span>HOTTY / BLADE</span><span>Identity · Motion</span></p>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============ QUÉ HAGO ============ -->
+        <section class="services" id="quehago">
+            <div class="section-head">
+                <h2 class="big-title reveal">QUÉ<br><span class="outline">HAGO</span></h2>
+                <p class="section-head__text reveal">Un estudio de diseño en formación, enfocado en soluciones visuales estratégicas. El diseño como herramienta para comunicar y posicionar marcas.</p>
+            </div>
+            <ul class="services__list" id="services">
+                <li data-img="Img/bimbo-phone-mockup-xd.webp"><span>01</span><h3>Identidad visual</h3><p>Logo · Sistema · Brandbook</p></li>
+                <li data-img="Img/asf poster tres.webp"><span>02</span><h3>Publicidad</h3><p>Campañas · Cartelería · Copy</p></li>
+                <li data-img="Img/final final render violin.webp"><span>03</span><h3>3D &amp; Render</h3><p>Modelado · Texturas · Producto</p></li>
+                <li data-img="Img/iPhone 16 Pro.webp"><span>04</span><h3>UI / UX</h3><p>Apps · Prototipos · Web</p></li>
+                <li data-img="Img/pelota-poster.jpg"><span>05</span><h3>Animación 3D</h3><p>Personajes · Blender · 3ds Max</p></li>
+                <li data-img="Img/audi-poster.jpg"><span>06</span><h3>Vídeo con IA</h3><p>Spots · Dirección de arte · Montaje</p></li>
+            </ul>
+            <div class="services__preview" id="services-preview"><img src="" alt=""></div>
+        </section>
+
+        <!-- ============ QUIÉN SOY ============ -->
+        <section class="about" id="quiensoy">
+            <div class="about__media reveal" id="about-lens">
+                <!-- Póster rosa y negro + foto real que se descubre con una lente -->
+                <img class="about__duo" src="Img/quiensoy-duo.webp" alt="Fernando Puche en Tokio">
+                <img class="about__color" src="Img/quiensoy-color.jpg" alt="" aria-hidden="true">
+                <p class="about__kana" aria-hidden="true">フェルナンド・プチェ</p>
+                <p class="about__hint">(Pasa el ratón · toca)</p>
+                <span class="about__sticker">DIGITAL DESIGNER &amp; 3D ANIMATOR</span>
+            </div>
+            <div class="about__content">
+                <h2 class="big-title reveal">QUIÉN<br><span class="outline">SOY</span></h2>
+                <p class="about__intro reveal">Fernando Puche Molina. <b>Diseñador digital y animador 3D.</b> Desde pequeño dibujando personajes inventados; hoy mi objetivo es crear, desarrollar y <b>dar vida visual a personajes</b> que transmitan emociones, personalidad y narrativa en distintos medios digitales.</p>
+                <ol class="timeline">
+                    <li class="reveal"><span>ORIGEN</span><p><b>Málaga.</b> The British School of Málaga. Criado entre la luz de la Costa del Sol, el dibujo y los videojuegos.</p></li>
+                    <li class="reveal"><span>U-TAD</span><p><b>Digital Design.</b> Actualmente en 4º curso, en Madrid.</p></li>
+                    <li class="reveal"><span>MEDAC</span><p><b>3D Animation.</b> Medac Davante, cursando.</p></li>
+                    <li class="reveal"><span>XATELITE</span><p><b>Experiencia.</b> Soporte Juniors · Director de arte · AI-Assisted designer.</p></li>
+                </ol>
+                <div class="skills reveal">
+                    <p class="eyebrow">(Herramientas)</p>
+                    <ul class="skills__list">
+                        <li class="lv-3">3ds Max</li><li class="lv-3">After Effects</li><li class="lv-3">Photoshop</li><li class="lv-3">Illustrator</li>
+                        <li class="lv-2">Cinema 4D</li><li class="lv-2">Mudbox</li><li class="lv-2">Figma</li><li class="lv-2">Premiere Pro</li>
+                        <li class="lv-2">InDesign</li><li class="lv-2">Krita</li><li class="lv-2">HTML / CSS</li><li class="lv-1">Blender</li><li class="lv-1">GitHub</li>
+                    </ul>
+                    <p class="eyebrow">(Idiomas)</p>
+                    <p class="skills__langs">Español · English · Deutsch</p>
+                    <a href="Fernando_Puche_CV.pdf" class="btn-pill" target="_blank" rel="noopener" data-cursor="CV">Descargar CV ↓</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ REDES SOCIALES ============ -->
+        <section class="social">
+            <div class="section-head">
+                <h2 class="big-title reveal">FOLLOW<br><span class="outline">ALONG</span></h2>
+                <div class="social__links reveal">
+                    <a href="https://instagram.com/fernandopuche" target="_blank" rel="noopener" data-cursor="IG">Instagram ↗</a>
+                    <a href="https://www.linkedin.com/in/fernandopuche/" target="_blank" rel="noopener" data-cursor="IN">LinkedIn ↗</a>
+                    <a href="https://www.artstation.com/puchefer" target="_blank" rel="noopener" data-cursor="ART">ArtStation ↗</a>
+                </div>
+            </div>
+            <div class="social__grid">
+                <a href="https://instagram.com/fernandopuche" target="_blank" rel="noopener" class="reveal" data-cursor="IG"><img src="Img/HIGH ASF CALOR.webp" alt="" loading="lazy"></a>
+                <a href="https://instagram.com/fernandopuche" target="_blank" rel="noopener" class="reveal" data-cursor="IG"><img src="Img/iPhone 16 Pro.webp" alt="" loading="lazy"></a>
+                <a href="https://instagram.com/fernandopuche" target="_blank" rel="noopener" class="reveal" data-cursor="IG"><img src="Img/beastt-perume.webp" alt="" loading="lazy"></a>
+                <a href="https://instagram.com/fernandopuche" target="_blank" rel="noopener" class="reveal" data-cursor="IG"><img src="Img/bimbo-port-2.webp" alt="" loading="lazy"></a>
+                <a href="https://instagram.com/fernandopuche" target="_blank" rel="noopener" class="reveal" data-cursor="IG"><video src="Img/pelota-blender.mp4" autoplay muted loop playsinline></video></a>
+                <a href="https://instagram.com/fernandopuche" target="_blank" rel="noopener" class="reveal" data-cursor="IG"><img src="Img/camisa blade.webp" alt="" loading="lazy"></a>
+            </div>
+        </section>
+
+        <!-- ============ CONTACTO ============ -->
+        <section class="contact" id="contacto">
+            <p class="eyebrow">(¿Hablamos?)</p>
+            <h2 class="contact__title">
+                <span class="reveal">LET'S</span>
+                <span class="reveal pink">TALK!</span>
+            </h2>
+            <button class="contact__mail" id="copy-mail" data-mail="fernandopuchemolina@gmail.com" data-cursor="COPIAR">
+                fernandopuchemolina@gmail.com
+            </button>
+            <p class="contact__hint" id="copy-hint">Haz clic para copiar el email</p>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <p class="footer__tag">Siempre peleando<br>cada <span class="pink">píxel.</span></p>
+        <div class="footer__row">
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/fernandopuche/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://instagram.com/fernandopuche" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.artstation.com/puchefer" target="_blank" rel="noopener">ArtStation</a>
+                <a href="https://www.therookies.co/u/FernandoPuche" target="_blank" rel="noopener">The Rookies</a>
+                <a href="https://github.com/Puchefer" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <p>© 2026 Fernando Puche</p>
+            <a href="#" class="footer__top">Volver arriba ↑</a>
+        </div>
+    </footer>
+
+    <script src="JS/app.js"></script>
+</body>
+</html>

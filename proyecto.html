@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto | PUCHE!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-page="proyecto">
+
+    <div class="cursor" id="cursor"><span class="cursor__label" id="cursor-label"></span></div>
+
+    <header class="header">
+        <a href="index.html" class="header__avatar" aria-label="Inicio">
+            <video src="Img/mi-cara_1.mp4" autoplay muted loop playsinline></video>
+        </a>
+        <button class="header__menu" id="menu-btn" aria-expanded="false" aria-controls="menu">
+            <span class="header__menu-open">MENU</span>
+            <span class="header__menu-close">CLOSE</span>
+        </button>
+        <a href="index.html#contacto" class="header__cta" data-cursor="HOLA">Let's talk</a>
+    </header>
+
+    <nav class="menu" id="menu" aria-hidden="true">
+        <ul class="menu__links">
+            <li><a href="index.html#trabajo"><span>01</span>TRABAJO</a></li>
+            <li><a href="index.html#quehago"><span>02</span>QUÉ HAGO</a></li>
+            <li><a href="index.html#quiensoy"><span>03</span>QUIÉN SOY</a></li>
+            <li><a href="index.html#contacto"><span>04</span>CONTACTO</a></li>
+        </ul>
+        <div class="menu__foot">
+            <a href="mailto:fernandopuchemolina@gmail.com">fernandopuchemolina@gmail.com</a>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/fernandopuche/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://instagram.com/fernandopuche" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.artstation.com/puchefer" target="_blank" rel="noopener">ArtStation</a>
+                <a href="https://www.therookies.co/u/FernandoPuche" target="_blank" rel="noopener">The Rookies</a>
+                <a href="https://github.com/Puchefer" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project">
+        <a href="index.html#trabajo" class="project__back">← Todo el trabajo</a>
+        <section class="project__hero">
+            <p class="eyebrow" id="proy-index"></p>
+            <h1 class="project__title" id="proy-title"></h1>
+            <div class="project__meta">
+                <p id="proy-subtitle"></p>
+                <p id="proy-tags"></p>
+            </div>
+        </section>
+        <div class="project__list" id="proy-list"></div>
+        <a class="project__next" id="proy-next" href="#" data-cursor="SIGUIENTE">
+            <span class="eyebrow">Siguiente proyecto</span>
+            <span class="project__next-title" id="proy-next-title"></span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__tag">Siempre peleando<br>cada <span class="pink">píxel.</span></p>
+        <div class="footer__row">
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/fernandopuche/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://instagram.com/fernandopuche" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.artstation.com/puchefer" target="_blank" rel="noopener">ArtStation</a>
+                <a href="https://www.therookies.co/u/FernandoPuche" target="_blank" rel="noopener">The Rookies</a>
+                <a href="https://github.com/Puchefer" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <p>© 2026 Fernando Puche</p>
+            <a href="#" class="footer__top">Volver arriba ↑</a>
+        </div>
+    </footer>
+
+    <script src="JS/app.js"></script>
+</body>
+</html>
