@@ -1125,7 +1125,7 @@ video.wcard__img { background: var(--ink-2); }
 /* Capas de la cabeza: coordenadas exactas dentro de la foto (en %), así coinciden siempre */
 .hero__hit {
     position: absolute;
-    left: 29.5%; top: 0; width: 43.5%; height: 72%;
+    left: 30%; top: -12%; width: 42%; height: 82%;
     z-index: 4;
     pointer-events: auto;
     cursor: pointer;
@@ -1134,7 +1134,7 @@ video.wcard__img { background: var(--ink-2); }
 }
 .hero__me, .hero__owl { position: absolute; display: block; height: auto; pointer-events: none; user-select: none; }
 .hero__me  { left: 35.624%; top: 0;       width: 31.849%; z-index: 2; opacity: 0; transition: opacity .6s ease .1s; }
-.hero__owl { left: 29.526%; top: 17.420%; width: 43.466%; z-index: 3;
+.hero__owl { left: 31.510%; top: -14.070%; width: 39.981%; z-index: 3;
              transform-origin: 50% 95%;
              transition: transform .7s var(--ease), opacity .55s ease, filter .55s ease; }
 /* Hover (o teclado / toque): el búho se aparta hacia arriba y aparece tu cara */
