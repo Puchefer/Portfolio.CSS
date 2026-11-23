@@ -71,8 +71,120 @@
             </h1>
 
             <div class="hero__glow" aria-hidden="true"></div>
-            <img class="hero__photo" id="hero-photo" src="Img/fernando.webp" alt="Fernando Puche con cabeza de búho">
-            <img class="hero__photo hero__real" id="hero-real" src="Img/fernando-real.webp" alt="" aria-hidden="true">
+            <!-- Tu foto real + la cabeza de búho encima (mismo contenedor = misma posición siempre) -->
+            <div class="hero__figure" id="hero-figure">
+                <img class="hero__face" src="Img/fernando-real.webp" alt="Fernando Puche">
+                <div class="hero__owl" id="hero-owl" role="button" tabindex="0" aria-label="Quitar el búho y ver mi cara">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 470" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="bPluma" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0" stop-color="#8d6a55"/>
+                          <stop offset="1" stop-color="#5c4236"/>
+                        </linearGradient>
+                        <linearGradient id="bOreja" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0" stop-color="#3a2a24"/>
+                          <stop offset="1" stop-color="#6e5040"/>
+                        </linearGradient>
+                        <radialGradient id="bIris" cx="50%" cy="42%" r="60%">
+                          <stop offset="0" stop-color="#ffe08a"/>
+                          <stop offset=".45" stop-color="#ffa22e"/>
+                          <stop offset=".85" stop-color="#ff5a3c"/>
+                          <stop offset="1" stop-color="#e8304f"/>
+                        </radialGradient>
+                        <linearGradient id="bLuz" x1="0" y1="0" x2="1" y2="0">
+                          <stop offset="0" stop-color="#ffb066" stop-opacity=".55"/>
+                          <stop offset=".5" stop-color="#ffffff" stop-opacity="0"/>
+                          <stop offset="1" stop-color="#6f8bff" stop-opacity=".55"/>
+                        </linearGradient>
+                        <clipPath id="bCabeza">
+                          <path d="M200 70 C295 68 352 135 352 228 C352 322 295 388 200 392 C105 388 48 322 48 228 C48 135 105 68 200 70 Z"/>
+                        </clipPath>
+                        <clipPath id="bOjoI"><circle cx="146" cy="218" r="48"/></clipPath>
+                        <clipPath id="bOjoD"><circle cx="254" cy="218" r="48"/></clipPath>
+                      </defs>
+                    
+                      <g stroke="#1a1210" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+                        <!-- Penachos (orejas) -->
+                        <path d="M108 128 C82 82 84 40 96 6 C122 40 152 70 170 96 Z" fill="url(#bOreja)"/>
+                        <path d="M292 128 C318 82 316 40 304 6 C278 40 248 70 230 96 Z" fill="url(#bOreja)"/>
+                        <path d="M110 112 C100 84 100 58 104 38" fill="none" stroke="#a37c63" stroke-width="3"/>
+                        <path d="M290 112 C300 84 300 58 296 38" fill="none" stroke="#a37c63" stroke-width="3"/>
+                    
+                        <!-- Plumas laterales -->
+                        <path d="M56 262 L28 284 L58 292 L36 318 L70 316 Z" fill="#6a4c3e"/>
+                        <path d="M344 262 L372 284 L342 292 L364 318 L330 316 Z" fill="#6a4c3e"/>
+                    
+                        <!-- Cabeza -->
+                        <path d="M200 70 C295 68 352 135 352 228 C352 322 295 388 200 392 C105 388 48 322 48 228 C48 135 105 68 200 70 Z" fill="url(#bPluma)"/>
+                      </g>
+                    
+                      <g clip-path="url(#bCabeza)">
+                        <!-- sombra suave (cel shading) -->
+                        <circle cx="350" cy="270" r="165" fill="#1a1210" opacity=".16"/>
+                        <!-- plumas de la frente -->
+                        <g fill="none" stroke="#4a342b" stroke-width="4" stroke-linecap="round" opacity=".7">
+                          <path d="M186 100 L200 112 L214 100"/>
+                          <path d="M156 116 L170 128 L184 116"/>
+                          <path d="M216 116 L230 128 L244 116"/>
+                          <path d="M186 130 L200 142 L214 130"/>
+                        </g>
+                      </g>
+                    
+                      <!-- Disco facial en forma de corazón -->
+                      <path d="M200 156 C170 118 92 122 86 202 C80 280 140 334 200 350 C260 334 320 280 314 202 C308 122 230 118 200 156 Z"
+                            fill="#f2e4cd" stroke="#b5653f" stroke-width="6"/>
+                      <path d="M200 156 C186 140 170 134 156 134" fill="none" stroke="#e0c9a8" stroke-width="4" stroke-linecap="round"/>
+                      <path d="M200 156 C214 140 230 134 244 134" fill="none" stroke="#e0c9a8" stroke-width="4" stroke-linecap="round"/>
+                    
+                      <!-- Ojos -->
+                      <g>
+                        <circle cx="146" cy="218" r="50" fill="#1a1210"/>
+                        <circle cx="254" cy="218" r="50" fill="#1a1210"/>
+                        <g clip-path="url(#bOjoI)">
+                          <circle cx="146" cy="218" r="44" fill="url(#bIris)"/>
+                          <circle cx="150" cy="222" r="24" fill="#120c0a"/>
+                        </g>
+                        <g clip-path="url(#bOjoD)">
+                          <circle cx="254" cy="218" r="44" fill="url(#bIris)"/>
+                          <circle cx="250" cy="222" r="24" fill="#120c0a"/>
+                        </g>
+                        <!-- párpado superior (mirada segura): tapa también el borde del ojo -->
+                        <path d="M94 199 Q148 175 202 203 L202 160 L94 160 Z" fill="#f2e4cd"/>
+                        <path d="M306 199 Q252 175 198 203 L198 160 L306 160 Z" fill="#f2e4cd"/>
+                        <path d="M98 198 Q148 176 200 204" fill="none" stroke="#1a1210" stroke-width="6" stroke-linecap="round"/>
+                        <path d="M302 198 Q252 176 200 204" fill="none" stroke="#1a1210" stroke-width="6" stroke-linecap="round"/>
+                        <!-- brillos estilo anime -->
+                        <circle cx="134" cy="210" r="10" fill="#fff"/>
+                        <circle cx="160" cy="236" r="4.5" fill="#fff"/>
+                        <circle cx="242" cy="210" r="10" fill="#fff"/>
+                        <circle cx="268" cy="236" r="4.5" fill="#fff"/>
+                        <!-- cejas de plumas -->
+                        <path d="M114 166 Q158 156 194 182" fill="none" stroke="#4a342b" stroke-width="7" stroke-linecap="round"/>
+                        <path d="M286 166 Q242 156 206 182" fill="none" stroke="#4a342b" stroke-width="7" stroke-linecap="round"/>
+                      </g>
+                    
+                      <!-- Rubor -->
+                      <ellipse cx="116" cy="284" rx="17" ry="7" fill="#ff3b5c" opacity=".35"/>
+                      <ellipse cx="284" cy="284" rx="17" ry="7" fill="#ff3b5c" opacity=".35"/>
+                    
+                      <!-- Pico -->
+                      <path d="M200 246 C216 252 218 272 200 296 C182 272 184 252 200 246 Z" fill="#3e3634" stroke="#1a1210" stroke-width="4" stroke-linejoin="round"/>
+                      <path d="M195 256 C192 264 193 272 197 280" fill="none" stroke="#8a7f7a" stroke-width="3" stroke-linecap="round"/>
+                    
+                      <!-- Gorguera (plumas del cuello) -->
+                      <path d="M96 352 Q116 398 140 362 Q160 404 184 364 Q200 410 216 364 Q240 404 260 362 Q284 398 304 352 C282 400 244 424 200 424 C156 424 118 400 96 352 Z"
+                            fill="#e9d6b8" stroke="#1a1210" stroke-width="5" stroke-linejoin="round"/>
+                      <g fill="none" stroke="#b9987a" stroke-width="3" stroke-linecap="round">
+                        <path d="M150 396 L160 406 L170 396"/><path d="M190 404 L200 414 L210 404"/><path d="M230 396 L240 406 L250 396"/>
+                      </g>
+                    
+                      <!-- Luz de estudio (naranja izquierda, azul derecha) para integrarlo con la foto -->
+                      <g clip-path="url(#bCabeza)" style="mix-blend-mode:soft-light">
+                        <rect x="0" y="0" width="400" height="470" fill="url(#bLuz)"/>
+                      </g>
+                    </svg>
+                </div>
+            </div>
 
             <!-- Firma (se "dibuja" sola al cargar) -->
             <svg class="hero__sign" viewBox="0 0 600 220" aria-hidden="true">

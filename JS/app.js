@@ -325,30 +325,18 @@ function initAboutLens() {
     caja.addEventListener('click', function () { caja.classList.toggle('is-open'); });
 }
 
-// ---------- PORTADA: LENTE QUE DESCUBRE TU CARA REAL ----------
-function initHeroLens() {
-    var hero = document.querySelector('.hero');
-    var real = document.getElementById('hero-real');
-    if (!hero || !real) return;
-
-    hero.addEventListener('mousemove', function (e) {
-        var r = real.getBoundingClientRect();
-        var x = e.clientX - r.left, y = e.clientY - r.top;
-        // La lente solo aparece encima de la figura (no en las letras ni en el fondo)
-        var dentro = x > r.width * 0.12 && x < r.width * 0.88 && y > 0 && y < r.height;
-        hero.classList.toggle('is-lens', dentro);
-        if (dentro) {
-            hero.style.setProperty('--lx', x + 'px');
-            hero.style.setProperty('--ly', y + 'px');
-        }
+// ---------- PORTADA: BÚHO QUE SE APARTA ----------
+// En ordenador funciona solo con CSS (:hover). Aquí solo añadimos el toque en móvil
+// y la tecla Enter / Espacio para quien navega con teclado.
+function initOwl() {
+    var owl = document.getElementById('hero-owl');
+    if (!owl) return;
+    function alternar() { owl.classList.toggle('is-off'); }
+    owl.addEventListener('click', function () {
+        if (window.matchMedia('(hover: none)').matches) alternar();
     });
-    hero.addEventListener('mouseleave', function () { hero.classList.remove('is-lens'); });
-
-    // En móvil: tocar la figura enseña la cara entera; tocar otra vez vuelve al búho
-    hero.addEventListener('click', function (e) {
-        if (!window.matchMedia('(pointer: coarse)').matches) return;
-        var r = real.getBoundingClientRect();
-        if (e.clientY > r.top && e.clientY < r.bottom) hero.classList.toggle('is-open');
+    owl.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); alternar(); }
     });
 }
 
@@ -438,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function () {
         initStrip();
         initReel();
         initAboutLens();
-        initHeroLens();
+        initOwl();
         initCopyMail();
         // Esperamos a la vez a la animación de carga y a los datos
         var cargaLista = new Promise(function (ok) { initLoader(ok); });

@@ -1104,14 +1104,45 @@ video.wcard__img { background: var(--ink-2); }
 /* Avatar del menú (búho) */
 .header__avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ---------- PORTADA: LENTE QUE DESCUBRE LA CARA REAL ---------- */
-.hero { --lx: -999px; --ly: -999px; --lr: 0px; }
-.hero.is-lens { --lr: 120px; }
-.hero__real { clip-path: circle(var(--lr) at var(--lx) var(--ly)); }
-/* el búho se "agujerea" justo donde está la lente */
-.hero.is-lens .hero__photo:not(.hero__real) {
-    -webkit-mask-image: radial-gradient(circle var(--lr) at var(--lx) var(--ly), transparent 98%, #000 100%);
-            mask-image: radial-gradient(circle var(--lr) at var(--lx) var(--ly), transparent 98%, #000 100%);
+/* ---------- PORTADA: BÚHO ENCIMA DE LA CABEZA ---------- */
+/* El contenedor tiene la misma proporción que la foto (2066 x 1194),
+   así la cabeza del búho (en %) cae siempre exactamente sobre la cabeza. */
+.hero__figure {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 2;
+    width: min(88vw, 1150px, calc(72svh * 2066 / 1194));
+    aspect-ratio: 2066 / 1194;
+    transform: translate(-50%, 30px) scale(.96);
+    opacity: 0;
+    transition: transform 1.4s var(--ease) .35s, opacity 1s ease .35s;
+    pointer-events: none;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,.6));
 }
-.hero.is-open .hero__real { clip-path: circle(150% at 50% 40%); }
-.hero.is-open .hero__photo:not(.hero__real) { opacity: 0; transition: opacity .6s ease; }
+.is-ready .hero__figure { transform: translate(-50%, 0) scale(1); opacity: 1; }
+.hero__face { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero__owl {
+    position: absolute;
+    left: 51.5%;
+    top: -9.5%;
+    width: 42%;
+    transform: translateX(-50%);
+    transform-origin: 50% 85%;
+    pointer-events: auto;
+    cursor: pointer;
+    outline: none;
+    transition: transform .7s var(--ease), opacity .55s ease, filter .55s ease;
+}
+.hero__owl svg { display: block; width: 100%; height: auto; overflow: visible; }
+/* Al pasar el ratón (o con teclado / toque): el búho se aparta hacia arriba y se desvanece */
+.hero__owl:hover,
+.hero__owl:focus-visible,
+.hero__owl.is-off {
+    transform: translateX(-50%) translateY(-28%) rotate(-10deg) scale(1.04);
+    opacity: 0;
+    filter: blur(2px);
+}
+@media (max-width: 760px) {
+    .hero__figure { width: min(185vw, calc(66svh * 2066 / 1194)); }
+}
