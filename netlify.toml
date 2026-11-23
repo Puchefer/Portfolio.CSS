@@ -1,0 +1,4 @@
+# Configuración para Netlify: minifica el código y publica la carpeta "dist"
+[build]
+  command = "npm install && npm run build"
+  publish = "dist"
