@@ -329,13 +329,14 @@ function initAboutLens() {
 // En ordenador funciona solo con CSS (:hover). Aquí solo añadimos el toque en móvil
 // y la tecla Enter / Espacio para quien navega con teclado.
 function initOwl() {
-    var owl = document.getElementById('hero-owl');
-    if (!owl) return;
-    function alternar() { owl.classList.toggle('is-off'); }
-    owl.addEventListener('click', function () {
+    var hit = document.getElementById('hero-hit');
+    var fig = document.getElementById('hero-figure');
+    if (!hit || !fig) return;
+    function alternar() { fig.classList.toggle('is-off'); }
+    hit.addEventListener('click', function () {
         if (window.matchMedia('(hover: none)').matches) alternar();
     });
-    owl.addEventListener('keydown', function (e) {
+    hit.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); alternar(); }
     });
 }

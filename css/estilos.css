@@ -1122,27 +1122,28 @@ video.wcard__img { background: var(--ink-2); }
 }
 .is-ready .hero__figure { transform: translate(-50%, 0) scale(1); opacity: 1; }
 .hero__face { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero__owl {
+/* Capas de la cabeza: coordenadas exactas dentro de la foto (en %), así coinciden siempre */
+.hero__hit {
     position: absolute;
-    left: 51.5%;
-    top: -9.5%;
-    width: 42%;
-    transform: translateX(-50%);
-    transform-origin: 50% 85%;
+    left: 29.5%; top: 0; width: 43.5%; height: 72%;
+    z-index: 4;
     pointer-events: auto;
     cursor: pointer;
     outline: none;
-    transition: transform .7s var(--ease), opacity .55s ease, filter .55s ease;
+    border-radius: 40%;
 }
-.hero__owl svg { display: block; width: 100%; height: auto; overflow: visible; }
-/* Al pasar el ratón (o con teclado / toque): el búho se aparta hacia arriba y se desvanece */
-.hero__owl:hover,
-.hero__owl:focus-visible,
-.hero__owl.is-off {
-    transform: translateX(-50%) translateY(-28%) rotate(-10deg) scale(1.04);
-    opacity: 0;
-    filter: blur(2px);
-}
+.hero__me, .hero__owl { position: absolute; display: block; height: auto; pointer-events: none; user-select: none; }
+.hero__me  { left: 35.624%; top: 0;       width: 31.849%; z-index: 2; opacity: 0; transition: opacity .6s ease .1s; }
+.hero__owl { left: 29.526%; top: 17.420%; width: 43.466%; z-index: 3;
+             transform-origin: 50% 95%;
+             transition: transform .7s var(--ease), opacity .55s ease, filter .55s ease; }
+/* Hover (o teclado / toque): el búho se aparta hacia arriba y aparece tu cara */
+.hero__hit:hover ~ .hero__owl,
+.hero__hit:focus-visible ~ .hero__owl,
+.hero__figure.is-off .hero__owl { transform: translateY(-24%) rotate(-8deg) scale(1.03); opacity: 0; filter: blur(2px); }
+.hero__hit:hover ~ .hero__me,
+.hero__hit:focus-visible ~ .hero__me,
+.hero__figure.is-off .hero__me { opacity: 1; transition: opacity .5s ease; }
 @media (max-width: 760px) {
     .hero__figure { width: min(185vw, calc(66svh * 2066 / 1194)); }
 }
