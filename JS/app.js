@@ -332,6 +332,20 @@ function initOwl() {
     var hit = document.getElementById('hero-hit');
     var fig = document.getElementById('hero-figure');
     if (!hit || !fig) return;
+    var capas = fig.querySelectorAll('.hero__me, .hero__owl');
+
+    // Lente que sigue al ratón: cada capa recibe la posición del cursor en sus propias coordenadas
+    hit.addEventListener('mousemove', function (e) {
+        capas.forEach(function (capa) {
+            var r = capa.getBoundingClientRect();
+            capa.style.setProperty('--x', (e.clientX - r.left) + 'px');
+            capa.style.setProperty('--y', (e.clientY - r.top) + 'px');
+        });
+        fig.classList.add('is-lens');
+    });
+    hit.addEventListener('mouseleave', function () { fig.classList.remove('is-lens'); });
+
+    // Móvil y teclado: alterna entre el gato y tu cara
     function alternar() { fig.classList.toggle('is-off'); }
     hit.addEventListener('click', function () {
         if (window.matchMedia('(hover: none)').matches) alternar();

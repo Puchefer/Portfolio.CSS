@@ -1126,24 +1126,28 @@ video.wcard__img { background: var(--ink-2); }
 .hero__hit {
     position: absolute;
     left: 30%; top: -5%; width: 38%; height: 75%;
-    z-index: 4;
+    z-index: 5;
     pointer-events: auto;
     cursor: pointer;
     outline: none;
     border-radius: 40%;
 }
+/* Radio de la lente animable (crece y se encoge suave) */
+@property --r { syntax: '<length>'; inherits: true; initial-value: 0px; }
 .hero__me, .hero__owl { position: absolute; display: block; height: auto; pointer-events: none; user-select: none; }
-.hero__me  { left: 35.624%; top: 0;       width: 31.849%; z-index: 2; opacity: 0; transition: opacity .6s ease .1s; }
+.hero__figure { --r: 0px; transition: --r .35s var(--ease), transform 1.4s var(--ease) .35s, opacity 1s ease .35s; }
+.hero__figure.is-lens { --r: 115px; }
+/* Tu cabeza: solo se ve dentro de la lente */
+.hero__me  { left: 0; top: 0; width: 100%; z-index: 4;
+             clip-path: circle(var(--r) at var(--x, -999px) var(--y, -999px)); }
+/* El gato: siempre visible, con un "agujero" justo donde está la lente */
 .hero__owl { left: 24.976%; top: -5.946%; width: 43.804%; z-index: 3;
-             transform-origin: 50% 95%;
-             transition: transform .7s var(--ease), opacity .55s ease, filter .55s ease; }
-/* Hover (o teclado / toque): el búho se aparta hacia arriba y aparece tu cara */
-.hero__hit:hover ~ .hero__owl,
-.hero__hit:focus-visible ~ .hero__owl,
-.hero__figure.is-off .hero__owl { transform: translateY(-24%) rotate(-8deg) scale(1.03); opacity: 0; filter: blur(2px); }
-.hero__hit:hover ~ .hero__me,
-.hero__hit:focus-visible ~ .hero__me,
-.hero__figure.is-off .hero__me { opacity: 1; transition: opacity .5s ease; }
+             -webkit-mask-image: radial-gradient(circle var(--r) at var(--x, -999px) var(--y, -999px), transparent 98%, #000 100%);
+                     mask-image: radial-gradient(circle var(--r) at var(--x, -999px) var(--y, -999px), transparent 98%, #000 100%);
+             transition: opacity .6s ease; }
+/* Móvil / teclado: un toque enseña la cara entera y otro vuelve al gato */
+.hero__figure.is-off .hero__me  { clip-path: none; }
+.hero__figure.is-off .hero__owl { opacity: 0; }
 @media (max-width: 760px) {
     .hero__figure { width: min(185vw, calc(66svh * 2066 / 1194)); }
 }
