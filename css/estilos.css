@@ -1103,3 +1103,15 @@ video.wcard__img { background: var(--ink-2); }
 
 /* Avatar del menú (búho) */
 .header__avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- PORTADA: LENTE QUE DESCUBRE LA CARA REAL ---------- */
+.hero { --lx: -999px; --ly: -999px; --lr: 0px; }
+.hero.is-lens { --lr: 120px; }
+.hero__real { clip-path: circle(var(--lr) at var(--lx) var(--ly)); }
+/* el búho se "agujerea" justo donde está la lente */
+.hero.is-lens .hero__photo:not(.hero__real) {
+    -webkit-mask-image: radial-gradient(circle var(--lr) at var(--lx) var(--ly), transparent 98%, #000 100%);
+            mask-image: radial-gradient(circle var(--lr) at var(--lx) var(--ly), transparent 98%, #000 100%);
+}
+.hero.is-open .hero__real { clip-path: circle(150% at 50% 40%); }
+.hero.is-open .hero__photo:not(.hero__real) { opacity: 0; transition: opacity .6s ease; }
