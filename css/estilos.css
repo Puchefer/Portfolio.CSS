@@ -1143,3 +1143,21 @@ video.wcard__img { background: var(--ink-2); }
 @media (max-width: 760px) {
     .hero__figure { width: min(185vw, calc(66svh * 2066 / 1194)); }
 }
+
+/* ---------- PORTADA: integración más suave ---------- */
+/* Degradado más largo y progresivo: la figura se funde con el fondo */
+.hero::after {
+    height: 55%;
+    background: linear-gradient(to top, var(--ink) 0%, rgba(10,10,10,.92) 18%, rgba(10,10,10,.6) 45%, rgba(10,10,10,0) 100%);
+}
+.hero__figure { filter: none; }
+/* Firma: abajo a la derecha, fuera de la cara y de las letras */
+.hero__sign { bottom: 14%; right: 4%; width: min(26vw, 380px); }
+/* Texto de abajo: más estrecho para que no se meta en la figura */
+.hero__claim { max-width: 26ch; }
+@media (max-width: 760px) {
+    .hero__sign { top: 24%; bottom: auto; right: 6%; width: 50vw; }
+}
+@media (max-width: 760px) {
+    .hero::after { height: 38%; }
+}
