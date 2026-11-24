@@ -1161,3 +1161,5 @@ video.wcard__img { background: var(--ink-2); }
 @media (max-width: 760px) {
     .hero::after { height: 38%; }
 }
+
+.reel__qrs a span { display: block; text-align: center; margin-top: .4rem; font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
